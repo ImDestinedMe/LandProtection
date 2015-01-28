@@ -1,0 +1,100 @@
+name: LandProtections
+main: com.fadingeclipse.landprotections.landprotection
+version: 0.0.1
+author: FadingEclipse
+authors: []
+depend : [Vault, WorldGuard, WorldEdit]
+softdepend : [Essentials]
+
+commands:
+   landprotection:
+      aliases: [ll]
+      description: The base landprotection command.
+      usage: /<command> [command]
+      permission: landprotection.use
+      permission-message: You don't have permission.
+   rent:
+      description: Renting regions with landprotection.
+      usage: /<command> [command]
+
+permissions:
+    landprotection.*:
+        description: Gives access to all landprotection commands
+        children:
+            landprotection.player.*: true
+            landprotection.admin.*: true
+#            
+#    landprotection.player.*:
+#            description: Gives access to default player commands.
+#            children:
+#                landprotection.player.own: true
+#                landprotection.player.map: true
+#                landprotection.player.info: true
+#                
+    landprotection.admin.*:
+        description: Gives access to admin commands.
+        children:
+            landprotection.admin.unclaim: true
+            landprotection.admin.list: true
+            landprotection.admin.manage: true
+            landprotection.admin.clearworld: true
+            landprotection.admin.bypass: true
+            landprotection.admin.reload: true
+            landprotection.admin.modifyfriends: true
+            landprotection.admin.friends: true
+#            
+    landprotection.use:
+            description: required to use any commands
+            default: true
+#            
+#    landprotection.player.own:
+#        description: permission for plot ownership (claim, unclaim, manage, friends, etc.)
+#        default: true
+#    landprotection.player.map:
+#        description: permission to use the land map
+#        default: true
+#    landprotection.player.info:
+#        description: Permission to use land info
+#        default: true
+#    landprotection.limit.extra:
+#        description: gives a larger land limit
+#        default: false
+#    landprotection.limit.extra2:
+#            description: gives a larger land limit
+#            default: false
+#    landprotection.limit.extra3:
+#                description: gives a larger land limit
+#                default: false
+#    landprotection.limit.extra4:
+#                description: gives a larger land limit
+#                default: false
+#    landprotection.limit.extra5:
+#                description: gives a larger land limit
+#                default: false
+#    landprotection.limit.override:
+#        description: allows unlimited land ownership
+#        default: false
+#    landprotection.admin.unclaim:
+#        description: Unclaim anyone's land
+#        default: op
+#    landprotection.admin.list:
+#        description: list all land owned by a user
+#        default: op
+#    landprotection.admin.manage:
+#        description: manage anyone's land
+#        default: op
+#    landprotection.admin.clearworld:
+#        description: clear a player's land in a world or all land in a world
+#        default: op
+#    landprotection.admin.bypass:
+#        description: bypass land protections
+#        default: op
+#    landprotection.admin.reload:
+#        description: reload plugin configuration
+#        default: op
+#    landprotection.admin.friends:
+#        description: view friends of any land
+#        default: op
+#    landprotection.admin.modifyfriends:
+#            description: add/remove friends of any land
+#            default: op
